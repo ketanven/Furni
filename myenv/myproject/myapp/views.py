@@ -6,6 +6,7 @@ from django.conf import settings
 from django.http import JsonResponse,HttpResponse
 import razorpay
 import pkg_resources
+# Admin2->Admin
 # Create your views here.
 
 def index(request):
