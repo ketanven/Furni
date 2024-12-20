@@ -50,7 +50,7 @@
                                 <td class="product-name">
                                     <h2 class="h5 text-black">{{ item.product.productname }}</h2>
                                 </td>
-                                <td>${{ item.product.pprice }}</td>
+                                <td>₹{{ item.product.pprice }}</td>
                                 <td>
                                     <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
                                         <input type="number" class="form-control text-center quantity-amount" value="{{ item.qty }}" min="1" name="qty" data-item-pk="{{ item.pk }}" onchange="updateQuantity(this)">
@@ -101,7 +101,7 @@
                                     <span class="text-black">Subtotal</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black" id="net-total">${{ net }}</strong>
+                                    <strong class="text-black" id="net-total">₹{{ net }}</strong>
                                 </div>
                             </div>
                             <div class="row mb-5">
@@ -109,7 +109,7 @@
                                     <span class="text-black">Total(Tax)</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black" id="subtotal">${{ subtotal }}</strong>
+                                    <strong class="text-black" id="subtotal">₹{{ subtotal }}</strong>
                                 </div>
                             </div>
 
@@ -136,10 +136,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function updateQuantity(input) {
-        var qty = $(input).val();
-        var itemPk = $(input).data('item-pk');
+        var qty = ₹(input).val();
+        var itemPk = ₹(input).data('item-pk');
 
-        $.ajax({
+        ₹.ajax({
             type: 'POST',
             url: '{% url "changeqty" pk=0 %}'.replace('0', itemPk),
             data: {
@@ -148,9 +148,9 @@
             },
             success: function(response) {
                 if (response.roundtotal) {
-                    $('#roundtotal-' + itemPk).text(response.roundtotal);
-                    $('#net-total').text('$' + response.net_total.toFixed(2));
-                    $('#subtotal').text('$' + response.subtotal.toFixed(2));
+                    ₹('#roundtotal-' + itemPk).text(response.roundtotal);
+                    ₹('#net-total').text('₹' + response.net_total.toFixed(2));
+                    ₹('#subtotal').text('₹' + response.subtotal.toFixed(2));
                 } else if (response.error) {
                     alert('Error: ' + response.error);
                 }

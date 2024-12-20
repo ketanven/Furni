@@ -32,7 +32,7 @@
                     <a class="product-item" href="{% url 'spdetails' pk=i.pk %}">
                         <img style="height: 200px;width: 250px;" src="{{ i.productimage.url }}" class="img-fluid product-thumbnail">
                         <h3 class="product-title">{{ i.productname }}</h3>
-                        <strong class="product-price">${{ i.pprice }}</strong>
+                        <strong class="product-price">₹{{ i.pprice }}</strong>
                         <h5>{{ i.pdesc }}</h5>
                         
                         <span class="icon-cross">

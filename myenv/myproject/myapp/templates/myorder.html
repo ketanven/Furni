@@ -50,7 +50,7 @@
                           <td class="product-name">
                             <h2 class="h5 text-black">{{i.product.productname}}</h2>
                           </td>
-                          <td>${{i.product.pprice}}</td>
+                          <td>₹{{i.product.pprice}}</td>
                           <form class="col-md-12" action="{% url 'changeqty' pk=i.pk %}" method="post">
                              {% csrf_token %} 
                           <td>
@@ -63,7 +63,7 @@
                             </div>
         
                           </td>
-                          <td>${{i.roundtotal}}</td>
+                          <td>₹{{i.roundtotal}}</td>
                         </tr>
                       </form>
                        {% endfor %}

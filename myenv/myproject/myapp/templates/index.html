@@ -57,7 +57,7 @@
 					  <a class="product-item" href="{% url 'bpdetails' pk=i.pk %}">
 						  <img style="height: 250px;width: 350px;" src="{{i.productimage.url}}" class="img-fluid product-thumbnail">
 						  <h3 class="product-title">{{i.productname}}</h3>
-						  <strong class="product-price">${{i.pprice}}</strong>
+						  <strong class="product-price">₹{{i.pprice}}</strong>
 						  <p>{{i.pdesc}}</p>
 						  <span class="icon-cross">
 							  <img src="{% static "images/cross.svg" %}" class="img-fluid">
