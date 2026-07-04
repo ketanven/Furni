@@ -184,8 +184,8 @@ Key configurations established in `myproject/settings.py` include:
     ```
 3.  **Razorpay Gateway Keys:**
     ```python
-    RAZORPAY_KEY_ID = 'rzp_test_qR4RRcX7iYEtFH'
-    RAZORPAY_KEY_SECRET = 'lWVI4f7rnhwRhYSunmR3JDl6'
+    RAZORPAY_KEY_ID = os.environ.get('RAZORPAY_KEY_ID', 'your_razorpay_key_id')
+    RAZORPAY_KEY_SECRET = os.environ.get('RAZORPAY_KEY_SECRET', 'your_razorpay_key_secret')
     ```
 
 ---
